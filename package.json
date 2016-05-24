@@ -1,0 +1,17 @@
+{
+  "name": "SquallAnimations",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "gl-react": "^2.2.1",
+    "gl-react-blur": "^1.2.3",
+    "gl-react-native": "^2.26.0",
+    "react": "^0.14.8",
+    "react-native": "^0.25.1",
+    "react-native-fs": "^1.4.0",
+    "squall": "file:///Users/lsouza/Dropbox/workspace/RNSquall"
+  }
+}
