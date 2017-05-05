@@ -27,6 +27,9 @@
 		EAACA65D1CEF9AA300701B38 /* libRNSquall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACA5FE1CEDF81E00701B38 /* libRNSquall.a */; };
 		EAACA6601CEF9E1200701B38 /* letters_anim.sqa in Resources */ = {isa = PBXBuildFile; fileRef = EAACA65F1CEF9E1200701B38 /* letters_anim.sqa */; };
 		EAACA6671CF1314F00701B38 /* libRNGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAACA6661CF1314700701B38 /* libRNGL.a */; };
+		EAACA6861CFD01A000701B38 /* sculpt.sqa in Resources */ = {isa = PBXBuildFile; fileRef = EAACA6851CFD01A000701B38 /* sculpt.sqa */; };
+		EAACA68C1CFD04B100701B38 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EAACA68A1CFD04B100701B38 /* background.png */; };
+		EAACA68D1CFD04B100701B38 /* statue.png in Resources */ = {isa = PBXBuildFile; fileRef = EAACA68B1CFD04B100701B38 /* statue.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +175,9 @@
 		EAACA6571CEF981A00701B38 /* Squall.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Squall.framework; path = ../node_modules/squall/ios/Squall.framework; sourceTree = "<group>"; };
 		EAACA65F1CEF9E1200701B38 /* letters_anim.sqa */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = letters_anim.sqa; path = ../node_modules/squall/ios/letters_anim.sqa; sourceTree = "<group>"; };
 		EAACA6611CF1314700701B38 /* RNGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNGL.xcodeproj; path = "../node_modules/gl-react-native/ios/RNGL.xcodeproj"; sourceTree = "<group>"; };
+		EAACA6851CFD01A000701B38 /* sculpt.sqa */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sculpt.sqa; path = ../src/animations/sculpt.sqa; sourceTree = "<group>"; };
+		EAACA68A1CFD04B100701B38 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = /Users/lsouza/Dropbox/workspace/SquallAnimations/node_modules/squall/ios/../../../../thisisnotagame/parallax_test/background.png; sourceTree = "<absolute>"; };
+		EAACA68B1CFD04B100701B38 /* statue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statue.png; path = /Users/lsouza/Dropbox/workspace/SquallAnimations/node_modules/squall/ios/../../../../thisisnotagame/parallax_test/statue.png; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +345,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				EAACA68A1CFD04B100701B38 /* background.png */,
+				EAACA68B1CFD04B100701B38 /* statue.png */,
+				EAACA6851CFD01A000701B38 /* sculpt.sqa */,
 				EAACA65F1CEF9E1200701B38 /* letters_anim.sqa */,
 				13B07FAE1A68108700A75B9A /* SquallAnimations */,
 				EAACA6561CEF980E00701B38 /* Frameworks */,
@@ -626,6 +635,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAACA6861CFD01A000701B38 /* sculpt.sqa in Resources */,
+				EAACA68D1CFD04B100701B38 /* statue.png in Resources */,
+				EAACA68C1CFD04B100701B38 /* background.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				EAACA6601CEF9E1200701B38 /* letters_anim.sqa in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,

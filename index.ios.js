@@ -10,8 +10,10 @@ import {
   StyleSheet,
   ScrollView,
   Slider,
+  Image,
   Text,
-  View
+  View,
+  StatusBar
 } from 'react-native';
 
 import RNFS from 'react-native-fs';
@@ -31,6 +33,7 @@ class SquallAnimations extends Component {
       progress: 0,
       globalTime: 0
     };
+
     RNFS.readDir(RNFS.MainBundlePath)
       .then((result) => {
         console.log('GOT RESULT', result);
@@ -58,40 +61,37 @@ class SquallAnimations extends Component {
       const draw = (time) => {
           setTimeout(() => {
               requestAnimationFrame(draw);
-              this.setState({globalTime:time});
+              this.setState({globalTime:this.state.globalTime + 1});
           }, 1000 / fps);
       }
 
       draw();
   }
 
+  componentDidMount() {
+    StatusBar.setHidden(true, 'none');
+  }
+
   render() {
     const t = this.state.globalTime ? this.state.globalTime : 0;
-    console.log(t)
     return (
       <View style={styles.core}>
+        <Surface width={width} height={height} eventsThrough={true} visibleContent={true}>
 
-          <View style={styles.container}>
-            <Text onPress={() => { this.setState({isPlaying: true}); }}>Play Me</Text>
-            <ScrollView style={this.scrollView}>
-              <Surface width={300} height={400}>
-                <CRTEffect time={t}>
-                  <View width={300} height={400}>
+              <ScrollView style={this.scrollView} width={width} height={height} showsHorizontalScrollIndicator={true}>
+                <View width={width} style={styles.container}>
+                  <Image source={require('./src/img/test.png')} style={styles.image}>
                     <AnimationView
                       style={styles.animation}
                       play={this.state.isPlaying}
                       progress={this.state.progress}
                       onAnimationUpdate={(e) => console.log(e.nativeEvent)}
                       onAnimationLoaded={(e) => console.log(e.nativeEvent)} />
-                  </View>
-                </CRTEffect>
-              </Surface>
-            </ScrollView>
-            <Slider style={styles.slider}
-              onValueChange={(e) => { this.setState({progress:e}); console.log(e)}}
-              maximumValue={1} minimumValue={0} step={.001} />
-          </View>
+                  </Image>
+                </View>
+              </ScrollView>
 
+          </Surface>
       </View>
 
     );
@@ -103,25 +103,29 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width,
     height: height,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#333333'
+    backgroundColor: '#1c2c3a'
   },
   container: {
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#333333',
+    backfaceVisibility: 'hidden',
+    backgroundColor: '#1c2c3a'
+  },
+  image: {
+    width: 800/2.5,
+    height: 4182/2.5,
+    top: 0,
+    left: 0
   },
   scrollView: {
-    flex: 1
+    flex: 1,
+    backfaceVisibility: 'hidden'
   },
   animation: {
-    width: 300,
-    height: 400
-  },
-  slider: {
-    width: 200,
-    height: 10
+    position: 'absolute',
+    width: 125,
+    height: 125 * 1.5,
+    bottom: 135,
+    right: 0
   }
 });
 

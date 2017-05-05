@@ -40,7 +40,7 @@ const shaders = GL.Shaders.create({
     	col -= scanline;
 
     	// vignette
-    	col *= 1.0 - d * 0.5;
+    	col *= 1.0 - d * 0.25;
       gl_FragColor = vec4(col, 1.0);
     }`
   }
@@ -48,9 +48,9 @@ const shaders = GL.Shaders.create({
 
 module.exports =  GL.createComponent(
 
-  ({ width, height, children, time }) =>
-    <GL.Node shader={shaders.CRTEffect} uniforms={{ time, resolution: [width, height] }}>
+  ({ width, height, children, time }) => {
+    return <GL.Node shader={shaders.CRTEffect} uniforms={{ time: time, resolution: [width, height] }}>
       <GL.Uniform name="source">{children}</GL.Uniform>
-    </GL.Node>
+    </GL.Node> }
 
 , { displayName: "CRTEffect" });
